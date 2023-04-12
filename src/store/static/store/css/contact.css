@@ -21,9 +21,19 @@ body {
 
 main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     height: 100vh;
+}
+
+.speech, .speech2 {
+    display: flex;
+    width: 60%;
+}
+
+.speech2 > p {
+    font-size: 10px;
 }
 
 section {

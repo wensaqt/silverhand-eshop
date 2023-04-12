@@ -7,6 +7,9 @@ def home(request):
 def best_sellers(request):
     return render(request, 'best-sellers.html')
 
+def categories(request):
+    return render(request, 'categories.html')
+
 def collections(request):
     return render(request, 'collections.html')
 
