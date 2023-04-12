@@ -1,0 +1,41 @@
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.navbar {
+    width: 100vw;
+    height: 4em;
+    background-color: var(--maize);
+    align-items: center;
+}
+
+
+.navLinks {
+    height: 4em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.navLinks > li {
+    width: 200px;
+    text-align: center;
+    padding: 0.5em 0 0.5em 0;
+    transition: 0.2s;
+    border-radius: 2px;
+}
+
+.navLinks > li > a {
+    text-decoration: none;
+    color: var(--raisin-black);
+}
+
+.navLinks > li:hover {
+    cursor: pointer;
+    background-color: var(--vanilla);
+}

@@ -1,0 +1,120 @@
+.banner {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+    gap: 1rem;
+}
+
+.one, .two {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50vw;
+    height: 100vh;
+}
+
+.one .background, .two .background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    filter: brightness(100%);
+    transition: 0.5s;
+}
+
+.one .background {
+    background-image: url(/store/media/imgCyber1.jpg);
+}
+
+.two .background {
+    background-image: url(/store/media/imgCyber2.jpg);
+}
+
+.one:hover .background, .two:hover .background {
+    cursor: pointer;
+    filter: brightness(50%);
+    transition: 0.5s;
+}
+
+.one h2, .two h2, .one p, .two p {
+    margin: 0;
+    z-index: 99;
+    color: #FFF;
+    font-size: 2em;
+}
+
+.one h2, .one p, .two h2, .two p {
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.one:hover h2, .two:hover h2, .one:hover p, .two:hover p {
+    opacity: 1;
+}
+
+.one {
+    width: calc(50vw);
+    transition: 0.5s;
+}
+
+.two {
+    width: calc(50vw);
+    transition: 0.5s;
+}
+
+.one:hover {
+    width: calc(60vw);
+    transition: 0.5s;
+}
+
+.one:hover ~ .two {
+    width: calc(40vw);
+}
+
+.two:hover {
+    width: calc(60vw);
+    transition: 0.5s;
+}
+
+.two:hover ~ .one {
+    width: calc(40vw);
+}
+
+.newsContainer {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.news {
+    color: #FFF;
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+}
+
+.newsContainer h2 {
+    margin: 100px 0 50px 50px;
+    font-size: 3em;
+    color: #fff;
+}
+
+.product h3 {
+    font-size: 2em;
+    margin-top: 10px;
+}
+
+.product img {
+    border-radius: 5px;
+}
+
+.product p {
+    margin-top: 5px;
+}

@@ -1,0 +1,65 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'store/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/home.css' %}">
+    <title>Silverhand | Home</title>
+</head>
+<body>
+    
+    {% block content %}
+    {% include 'header.html' %}
+    {% endblock %}
+
+    <section class="banner">
+
+        <div class="one">
+            <div class="background"></div>
+            <h2>COLLECTIONS</h2>
+            <p>The advanced cyberwear you need.</p>
+        </div>
+
+        <div class="two">
+            <div class="background"></div>
+            <h2>CONSUMABLES</h2>
+            <p>Powercells, immunosuppressants and more.</p>
+        </div>
+    </section>
+
+    <section class= newsContainer>
+        <h2>WHAT'S NEW ?</h2>
+        <div class="news">
+            <div class="product">
+                <img src="media/cyberHands.jpg" alt="cyberhands" style="height: 300px; width: 300px;">
+                <h3>Hypergloves NC-3</h3>
+                <p>1299,99 §</p>
+            </div>
+
+            <div class="product">
+                <img src="media/cyberShoes.jpg" alt="cybershoes" style="height: 300px; width: 300px;">
+                <h3>GlamStep Heelcharm</h3>
+                <p>2599,99 §</p>
+            </div>
+
+            <div class="product">
+                <img src="media/cyberHeart.jpg" alt="cyberHeart" style="height: 300px; width: 300px;">
+                <h3>Life-Link 2000</h3>
+                <p>8799,99 §</p>
+            </div>
+
+            <div class="product">
+                <img src="media/cyberBrain.jpg" alt="cyberbrain" style="height: 300px; width: 300px;">
+                <h3>Brainlet Deepmind-4</h3>
+                <p>8799,99 §</p>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
