@@ -1,0 +1,33 @@
+{% load widget_tweaks %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'store/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/signup.css' %}">
+    <title>Document</title>
+</head>
+<body>
+
+    {% block content %}
+    {% include 'header.html' %}
+    {% endblock %}
+
+    <form method="post">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label class="form-label">{{ field.label }}</label>
+                {% render_field field class="form-control" %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Create account</button>
+    </form>
+    
+</body>
+</html>

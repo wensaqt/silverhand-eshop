@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here;
 
@@ -8,6 +9,8 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+    
+
 
 class Collection(models.Model):
     name = models.CharField(max_length=255)
@@ -15,6 +18,8 @@ class Collection(models.Model):
 
     def __str__(self):
         return self.name
+    
+
 
 class Product(models.Model):
     name = models.CharField(max_length=255)
@@ -27,3 +32,12 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+    
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    panier = models.ManyToManyField('Product', blank=True)
+
+    def __str__(self):
+        return self.user.username

@@ -6,7 +6,12 @@
             <li><a href="{% url 'categories' %}">Categories</a></li>
             <li><a href="{% url 'about' %}">About Silverhand</a></li>
             <li><a href="{% url 'contact' %}">Contact us</a></li>
-            <li><a href="{% url 'login' %}">Register</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'signup' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
         </ul>
     </nav>
 </header>
