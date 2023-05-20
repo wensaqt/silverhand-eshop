@@ -17,7 +17,7 @@ header {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     list-style: none;
 }
@@ -35,7 +35,6 @@ header {
 .navLinks > li > a {
     display: flex;
     justify-content: center;
-    width: 200px;
     align-items: center;
     height: 50%;
     text-decoration: none;

@@ -1,12 +1,11 @@
 .banner {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 50%;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
     width: 100vw;
     height: 100vh;
-    gap: 1rem;
     overflow: hidden;
     transition: 0.5s ease-in-out;
 }
@@ -40,10 +39,6 @@
     background-size: cover;
     filter: brightness(100%);
     transition: 0.5s;
-}
-
-.one:hover + .banner {
-    grid-template-columns: 60% 40%;
 }
 
 .one .background {
@@ -80,14 +75,15 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
+    overflow: hidden;
 }
 
-.news {
+.newsCarousel {
     color: #FFF;
     display: flex;
     flex-direction: row;
     gap: 5em;
+    margin-left: 50px;
 }
 
 .newsContainer h2 {
