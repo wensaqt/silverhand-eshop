@@ -1,6 +1,6 @@
 .banner {
     display: grid;
-    grid-template-columns: 50%;
+    grid-template-columns: 50% 50%;
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
@@ -78,18 +78,38 @@
     overflow: hidden;
 }
 
-.newsCarousel {
+.news {
     color: #FFF;
     display: flex;
     flex-direction: row;
     gap: 5em;
-    margin-left: 50px;
+    margin: 0 auto;
+
+    width: 1000px;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+
+    border: 1px solid var(--bittersweet);
 }
 
 .newsContainer h2 {
     margin: 100px 0 50px 50px;
     font-size: 3em;
-    color: #fff;
+    color: var(--baby-powder);
+}
+
+.product {
+    width: 1000px;
+    height: 350px;
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .product h3 {
@@ -103,4 +123,29 @@
 
 .product p {
     margin-top: 5px;
+}
+
+.crslButton {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    z-index: 10px;
+    cursor: pointer;
+    background-color: #FFF;
+    font-size: 18px;
+    top: 45%;
+
+    transition: all .1s ease-in-out;
+}
+.crslButton:active {
+    transform: scale(1.1);
+}
+.crslNext {
+    right: 2%;
+}
+.crslPrev {
+    left: 2%;
 }

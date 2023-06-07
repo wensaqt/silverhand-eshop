@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="{% static 'store/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'store/css/header.css' %}">
     <link rel="stylesheet" href="{% static 'store/css/home.css' %}">
-    <script src="{% static 'store/js/homeCarousel.js' %}" async></script>
     <title>Silverhand | Home</title>
 </head>
 <body>
@@ -20,7 +19,7 @@
 
     <section class="banner">
 
-        <a href="{% url 'collections' %}">
+        <a href="#">
             <div class="one">
                 <div class="background"></div>
                 <h2>COLLECTIONS</h2>
@@ -37,32 +36,73 @@
 
     <section class= newsContainer>
         <h2>WHAT'S NEW ?</h2>
-        <div class="newsCarousel">
+        <div class="news">
             <div class="product">
-                <img src="media/cyberHands.jpg" alt="cyberhands" style="height: 300px; width: 300px;">
+                <img src="/store/media/cyberHands.jpg" alt="cyberhands" style="height: 300px; width: 300px;">
                 <h3>Hypergloves NC-3</h3>
                 <p>1299,99 §</p>
             </div>
 
             <div class="product">
-                <img src="media/cyberShoes.jpg" alt="cybershoes" style="height: 300px; width: 300px;">
+                <img src="/store/media/cyberShoes.jpg" alt="cybershoes" style="height: 300px; width: 300px;">
                 <h3>GlamStep Heelcharm</h3>
                 <p>2599,99 §</p>
             </div>
 
             <div class="product">
-                <img src="media/cyberHeart.jpg" alt="cyberHeart" style="height: 300px; width: 300px;">
+                <img src="/store/media/cyberHeart.jpg" alt="cyberHeart" style="height: 300px; width: 300px;">
                 <h3>Life-Link 2000</h3>
                 <p>8799,99 §</p>
             </div>
 
             <div class="product">
-                <img src="media/cyberBrain.jpg" alt="cyberbrain" style="height: 300px; width: 300px;">
+                <img src="/store/media/cyberBrain.jpg" alt="cyberbrain" style="height: 300px; width: 300px;">
                 <h3>Brainlet Deepmind-4</h3>
                 <p>8799,99 §</p>
             </div>
+
+            <button class="crslButton crslNext">></button>
+            <button class="crslButton crslPrev"><</button>
         </div>
     </section>
     
 </body>
+
+<script>
+
+    // All products
+    const products = document.querySelectorAll('.product');
+    // Next and Previous buttons
+    const btnNext = document.querySelector('.crslNext');
+    const btnPrev = document.querySelector('.crslPrev');
+
+    // Currently focused product on the carousel
+    let current = 0;
+    // Maximum amount of products on the carousel
+    let max = products.length - 1;
+
+    // Apply transformation to each product
+    products.forEach((slide, indx) => {
+        slide.style.transform = 'translateX(' + indx*100 + '%)';
+    });
+
+    btnNext.addEventListener('click', e => {
+        if(current === max) current = 0;
+        else current++;
+
+        products.forEach((slide, indx) => {
+            slide.style.transform = 'translateX(' + 100*(indx - current) + '%)';
+        });
+    });
+
+    btnPrev.addEventListener('click', e => {
+        if(current === 0) current = max;
+        else current--;
+
+        products.forEach((slide, indx) => {
+            slide.style.transform = 'translateX(' + 100*(indx - current) + '%)';
+        });
+    });
+
+</script>
 </html>
